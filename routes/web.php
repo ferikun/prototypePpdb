@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\akunController;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home',[
+        "title" => "Home"
+    ]);
 });
+
+Route::get('/siswa', [akunController::class, 'daftarSiswa']);
+
+Route::get('/bio/{bio:akun_id}', [akunController::class, "bioUser"]);
+
+Route::get('/login', [LoginController::class, 'index']);
