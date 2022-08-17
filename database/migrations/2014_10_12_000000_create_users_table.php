@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('password');
             $table->foreignId('sekolah_id');
             $table->integer('kodeMasuk');
-            $table->foreignId('asalSekolah_id');
             $table->foreignId('biodata_id');
             $table->timestamps();
         });

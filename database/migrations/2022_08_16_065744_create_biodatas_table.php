@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('olahraga');
             $table->string('cita');
             $table->foreignId('alamat_id');  
+            $table->foreignId('asalSekolah_id');
             $table->string('ruangan')->nullable();
             $table->string('status')->nullable();;
             $table->integer('noPeserta')->nullable();;
