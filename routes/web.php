@@ -30,3 +30,15 @@ Route::get('/daftar', function () {
         "title" => "Daftar"
     ]);
 });
+
+Route::get('/user/bio', function () {
+    return view('user.bio',[
+        "title" => "Bio Siswa"
+    ]);
+});
+
+Route::get('/admin/daftarsiswa', function () {
+    return view('admin.siswa',[
+        "title" => "Daftar Siswa"
+    ]);
+});
