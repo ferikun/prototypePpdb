@@ -24,7 +24,6 @@
                     <option selected>Sebagai</option>
                     <option value="1">Wali Siswa</option>
                     <option value="2">Calon Siswa</option>
-                    <option value="3">Admin</option>
                   </select>
                 <button type="submit" class="btn btn-primary mt-3">Daftar</button>
             </form>

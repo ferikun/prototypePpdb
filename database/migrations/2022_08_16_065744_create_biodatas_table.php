@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('biodatas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->unique()->nullable();
             $table->integer('nisn');
             $table->enum('gender',['laki-laki','perempuan']);
             $table->string('placeBorn');
@@ -25,8 +26,8 @@ return new class extends Migration
             $table->string('bidangFav');
             $table->string('olahraga');
             $table->string('cita');
-            $table->foreignId('alamat_id');  
-            $table->foreignId('asalSekolah_id');
+            $table->foreignId('alamat_id');
+            $table->foreignId('asalSekolah_id'); 
             $table->string('ruangan')->nullable();
             $table->string('status')->nullable();;
             $table->integer('noPeserta')->nullable();;

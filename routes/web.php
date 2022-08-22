@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BiosiswaController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,14 +34,11 @@ Route::get('/daftar', function () {
     ]);
 });
 
-Route::get('/user/bio', function () {
-    return view('user.bio',[
-        "title" => "Bio Siswa"
-    ]);
-});
+Route::get('/admin/daftarsiswa', [UserController::class,'showdata']);
 
-Route::get('/admin/daftarsiswa', function () {
-    return view('admin.siswa',[
-        "title" => "Daftar Siswa"
-    ]);
-});
+Route::get('/admin/biosiswa/{bio}',[BiosiswaController::class,'showbiosiswa']);
+
+Route::get('/user/biosiswa/{bio}',[BiosiswaController::class,'showbiodata']);
+
+Route::resource('/user/biodata', BiosiswaController::class);
+

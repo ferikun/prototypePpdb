@@ -1,12 +1,10 @@
+
 @extends('layouts.main')
 @section('containers')
 <h1 style="text-align:center">Biodata {{ $siswa->iduser->fullName }}</h1>
 <br>
-<div class="container" >
-<a class="btn btn-warning" href="">ubah</a>
-</div>
 <table class="table table-bordered text-center container">
-    <tr><th>NISN</th><td>{{ $siswa->nisn }}</td></tr>
+    <tr><th>NISN</th><td>{{ $siswa->nisn }}</tr>
     <tr><th>Nama Lengkap<td>{{ $siswa->iduser->fullName }}</td></th></tr>
     <tr><th>Jenis Kelamin</th><td>{{ $siswa->gender }}</td></tr>
     <tr><th>Tempat Lahir</th><td>{{ $siswa->placeBorn }}</td></tr>

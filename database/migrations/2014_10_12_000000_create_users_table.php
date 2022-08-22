@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->enum('role',['admin','siswa','waliMurid']);
+            $table->enum('role',['siswa','waliMurid']);
             $table->string('username');
             $table->string('fullName');
             $table->string('email');
             $table->string('password');
             $table->foreignId('sekolah_id');
             $table->integer('kodeMasuk');
-            $table->foreignId('biodata_id');
             $table->timestamps();
         });
     }
