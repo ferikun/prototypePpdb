@@ -3,7 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BiosiswaController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegisterController;
 use App\Models\User;
+use Illuminate\Auth\Events\Login;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,17 +28,24 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/login', function () {
-    return view('login.index',[
-        "title" => "Login"
-    ]);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/register',[RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register',[RegisterController::class, 'create']);
+
+Route::post('/logout',[LogoutController::class,'logout']);
+// DASHBOARD
+Route::group(['middleware' => ['auth', 'role:siswa,admin']], function(){
+    Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
+    
+
 });
 
-Route::get('/daftar', function () {
-    return view('daftar.create',[
-        "title" => "Daftar"
-    ]);
-});
+Route::get('/dashboard/profil',[DashboardController::class, 'profil']);
+Route::get('/dashboard/pengumuman',[DashboardController::class, 'pengumuman']);
+Route::get('/dashboard/pembayaran',[DashboardController::class, 'pembayaran']);
+Route::get('/dashboard/dokumen',[DashboardController::class, 'dokumen']);
 
 Route::get('/admin/daftarsiswa', [UserController::class,'showdata']);
 
