@@ -7,11 +7,32 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\AsalSekolah;
 use App\Models\Alamat;
 use App\Models\User;
+use App\Models\Jurusan;
+use App\Models\Nilai;
+use App\Models\NoPendaftaran;
 
 class Biodata extends Model
 {
+
+    protected $guarded = "id";
+
+
+    public function scopeSearch($query)
+    {
+        if(request('keywoard'))
+        {
+            $query->where('name','like','%' . request('keywoard') . '%')
+                ->orWhere('nilai','like','%' . request('keywoard') . '%')
+                ->orWhere('nama_jurusan','like','%' . request('keywoard') . '%')
+                ->orWhere('nama_asal_sekolah','like','%' . request('keywoard') . '%')
+                ->orWhere('nomor','like','%' . request('keywoard') . '%');
+
+        }
+    }
+
+
     public function asalsekolah(){
-        return $this->hasOne(AsalSekolah::class);
+        return $this->hasOne(AsalSekolah::class,'bio_id');
     }
     public function iduser(){
         return $this->belongsTo(User::class,'user_id');
@@ -19,5 +40,20 @@ class Biodata extends Model
 
     public function alamat(){
         return $this->belongsTo(Alamat::class,'alamat_id');
+    }
+
+    public function jurusan()
+    {
+        return $this->belongsTo(Jurusan::class,'jurusan_id');
+    }
+
+    public function nilai()
+    {
+        return $this->hasOne(Nilai::class,'bio_id');
+    }
+
+    public function NoDaftar()
+    {
+        return $this->hasOne(NoPendaftaran::class,'bio_id');
     }
 }

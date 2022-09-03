@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('kontaks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('sekolah_id')->unique();
+            $table->string('telepon');
             $table->text('WaSekolah');
             $table->text('WaAdmin');
             $table->text('WaBp');

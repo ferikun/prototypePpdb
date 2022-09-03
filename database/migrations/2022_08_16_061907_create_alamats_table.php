@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('alamats', function (Blueprint $table) {
             $table->id();
             $table->text('alamat');
-            $table->foreignId('kec_id');
-            $table->foreignId('kab_id');
-            $table->foreignId('prov_id');            
+            $table->string('kecamatan');
+            $table->string('kabupaten');
+            $table->string('provinsi');
+            $table->string('kode_pos');            
             $table->timestamps();
         });
     }

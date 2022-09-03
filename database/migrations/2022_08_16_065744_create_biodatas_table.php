@@ -16,22 +16,23 @@ return new class extends Migration
         Schema::create('biodatas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->unique()->nullable();
-            $table->integer('nisn');
+            $table->string('name');
+            $table->string('nickname');
+            $table->string('nisn');
             $table->enum('gender',['laki-laki','perempuan']);
-            $table->string('placeBorn');
-            $table->string('birth');
+            $table->string('tempat_lahir');
+            $table->date('tanggal_lahir');
             $table->string('agama');
-            $table->string('statusAnak');
-            $table->string('statusKeluarga');
-            $table->string('bidangFav');
-            $table->string('olahraga');
-            $table->string('cita');
+            $table->string('anak_ke');
             $table->foreignId('alamat_id');
-            $table->foreignId('asalSekolah_id'); 
-            $table->string('ruangan')->nullable();
-            $table->string('status')->nullable();;
-            $table->integer('noPeserta')->nullable();;
-            $table->string('gelDaftar')->nullable();;
+            $table->string('no_hp');
+            $table->string('status_keluarga');
+            $table->string('image')->nullable();
+            $table->foreignId('jurusan_id')->nullable();
+            $table->foreignId('ruangan_id')->nullable();
+            $table->string('gel_daftar')->nullable();
+            $table->string('status_pembayaran')->nullable();
+            $table->string('status_kelulusan')->nullable();
             $table->timestamps();
         });
     }

@@ -17,5 +17,10 @@ class UserController extends Controller
             "siswa" => $data 
         ]);
     }
+
+    public function CreateBio()
+    {
+        return view('form.biodata');
+    }
 }
 

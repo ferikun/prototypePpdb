@@ -23,4 +23,49 @@ class BiosiswaController extends Controller
             'siswa' => $bio
         ]);
     }
+
+    public function create(Request $request)
+    {
+        $validatedData = $request->validate([
+            "nisn" => "required",
+            "name" => "required",
+            "nickname" => "required",
+            "gender" => "required",
+            "tempat_lahir" => "required",
+            "tanggal_lahir" =>"required",
+            "agama" => "required",
+            "anak_ke" => "required",
+            "status_keluarga" => "required",
+            "alamat" => "required",
+            "provinsi" => "required",
+            "kabupaten" => "required",
+            "kecamatan" => "required",
+            "kode_pos" => "required"
+        ]);
+
+        $alamat = $validatedData([
+            "alamat",
+            "provinsi",
+            "kabupaten",
+            "kecamatan",
+            "kode_pos"
+        ]);
+
+        $bio = $validatedData([
+            "nisn" => "required",
+            "name" => "required",
+            "nickname" => "required",
+            "gender" => "required",
+            "tempat_lahir" => "required",
+            "tanggal_lahir" =>"required",
+            "agama" => "required",
+            "anak_ke" => "required",
+            "status_keluarga" => "required"
+        ]);
+
+
+
+
+    }
+
 }

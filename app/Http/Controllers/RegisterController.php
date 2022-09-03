@@ -17,7 +17,6 @@ class RegisterController extends Controller
     {
         $validatedData = $request->validate([
             "role" => "required",
-            "name" => "required",
             "username" => "required|min:5",
             "email" => "required|email:dns",
             "password" => "required|min:8"
@@ -27,8 +26,8 @@ class RegisterController extends Controller
 
         User::create($validatedData);
 
-        session()->flash('berhasil','Selamat Pendaftaran akun telah berhasil, silahkan untuk login');
+        // session()->flash('berhasil','Selamat Pendaftaran akun telah berhasil, silahkan untuk login');
 
-        return redirect('/login');
+        return redirect('/login')->with('success','Selamat Akun anda telah berhasil dibuat, silahkan Login!');
     }
 }

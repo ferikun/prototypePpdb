@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Biodata;
+use App\Models\Keuangan;
 
 
 class User extends Authenticatable
@@ -51,5 +52,16 @@ class User extends Authenticatable
 
     public function bio(){
         return $this->hasOne(Biodata::class);
+    }
+
+    public function sekolah()
+    {
+        return $this->belongsTo(Sekolah::class,'sekolah_id');
+    }
+
+    //admin
+    public function keuangan()
+    {
+        return $this->hasOne(Keuangan::class);
     }
 }

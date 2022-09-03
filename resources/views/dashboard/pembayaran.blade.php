@@ -16,7 +16,7 @@
         {{-- ahir menu pembayaran --> --}}
 
         <!-- pembayaran pendaftaran -->
-                 {{-- <div class="col-8">
+                 <div class="col-8">
                     <div class="card mt-3 ms-2">
                         <div class="card-header bg-white border-dark">
                             <h5>Biaya Pendaftaran</h5>
@@ -36,11 +36,11 @@
                             <a href="#" class="btn btn-lg btn-info text-white">Bayar</a>
                         </div>
                     </div>
-                </div> --}}
+                </div>
                 {{-- ahir pembayaran pendaftaran --> --}}
 
                  <!-- biaya lainya -->
-                <div class="col-8">
+                {{-- <div class="col-8">
                     <div class="card mt-3 ms-2">
                         <div class="card-header bg-white border-dark">
                             <h5>Biaya Pendaftaran</h5>
@@ -68,7 +68,7 @@
                             <a class="btn btn-success btn-lg masuk" href="#">Bayar</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- ahir biaya lainya -->
 
 @endsection

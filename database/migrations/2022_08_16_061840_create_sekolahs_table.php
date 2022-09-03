@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('sekolahs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->unique();
+            $table->string('nama_sekolah')->unique();
+            $table->string('kode_sekolah')->default('data belum ada');
+            $table->text('bio')->default('Ini adalah bio');
             $table->foreignId('alamat_id');
-            $table->text('bio');
-            $table->foreignId('kontak_id');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use alert;
+
 use Illuminate\Http\Request;
+use App\Models\Biodata;
 
 class LoginController extends Controller
 {
@@ -19,13 +22,21 @@ class LoginController extends Controller
             'username' => ['required'],
             'password' => ['required'],
         ]);
+    //    $bio =  Biodata::where('user_id', auth()->user()->id);
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
+            // if($bio->fill = false){
+            //     return redirect('/dashboard/create');
+            // }
+            
             return redirect()->intended('/dashboard');
         }
  
-        return back()->with('GagalLogin','Gagal Login ! Pastikan Username dan Password yang anda masukan sudah benar');
+    //    $warning = Alert::warning('Warning Title', 'Warning Message');
+        
+
+        return back()->with('warning','Login Anda Gagal');
     }
 }

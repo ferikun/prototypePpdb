@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
     <div class="container-lg">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
@@ -61,16 +60,6 @@
                                     <input type="hidden" name="role" value="siswa">
                                     <div>
                                         <i class="fa-solid fa-user-plus"></i>
-                                    </div>
-
-                                    <div class="form-outline form-white mb-3 mt-2">
-                                        <input type="text" name="name" id="name" class="form-control form-control-lg @error('name') is-invalid @enderror" autocomplete="off" placeholder="Nama Lengkap" value="{{ old('name') }}" required>
-                                        @error('name')
-                                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                            {{ $message }}
-                                          </div>
-                                        @enderror
-
                                     </div>
 
                                     <div class="form-outline form-white mb-3 mt-2">
