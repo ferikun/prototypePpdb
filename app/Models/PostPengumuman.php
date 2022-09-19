@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class PostPengumuman extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "ppdb_id",
+        "kategori",
+        "title",
+        "konten",
+        "author"
+    ];
+
+    public function ppdb()
+    {
+        return $this->belongsTo(PPDB::class,'ppdb_id');
+    }
 }

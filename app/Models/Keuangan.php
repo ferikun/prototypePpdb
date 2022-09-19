@@ -9,4 +9,15 @@ class Keuangan extends Model
 {
     use HasFactory;
     protected $guarded = "id";
+
+    protected $fillable = [
+        "ppdb_id",
+        "nama_tagihan",
+        "nominal"
+    ];
+
+    public function ppdb()
+    {
+        return $this->belongsTo(PPDB::class,'ppdb_id');
+    }
 }

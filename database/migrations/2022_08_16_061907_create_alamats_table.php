@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('alamats', function (Blueprint $table) {
             $table->id();
-            $table->text('alamat');
-            $table->string('kecamatan');
-            $table->string('kabupaten');
-            $table->string('provinsi');
-            $table->string('kode_pos');            
+            $table->foreignId('refrence_id');
+            $table->string('for');
+            $table->text('alamat')->default('Belum ada alamat');
+            $table->string('kecamatan')->default('Belum ada Kecamatan');
+            $table->string('kabupaten')->default('Belum ada Kabupaten');
+            $table->string('provinsi')->default('Belum ada Provinsi');
+            $table->string('kode_pos')->default('Belum ada Kode Pos');            
             $table->timestamps();
         });
     }

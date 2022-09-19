@@ -5,7 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WaliIbu extends Model
+class OrangTua extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "bio_id",
+        "role",
+        "tgl_lahir",
+        "agama"
+    ];
 }

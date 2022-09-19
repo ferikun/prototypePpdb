@@ -54,14 +54,19 @@ class User extends Authenticatable
         return $this->hasOne(Biodata::class);
     }
 
-    public function sekolah()
+    public function admin()
     {
-        return $this->belongsTo(Sekolah::class,'sekolah_id');
+        return $this->hasOne(Admin::class,'admin_id');
     }
 
     //admin
     public function keuangan()
     {
         return $this->hasOne(Keuangan::class);
+    }
+
+    public function jurusan()
+    {
+        return $this->hasOne(Jurusan::class,'admin_id');
     }
 }

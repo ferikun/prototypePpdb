@@ -25,6 +25,6 @@ class Sekolah extends Model
 
     public function alamat()
     {
-        return $this->belongsTo(Alamat::class, 'alamat_id');
+        return $this->hasOne(Alamat::class, 'refrence_id');
     }
 }

@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('username');
             $table->string('email');
             $table->string('password');
-            $table->foreignId('sekolah_id')->nullable();
-            $table->foreignId('kodeMasuk')->nullable();
             $table->timestamps();
         });
     }

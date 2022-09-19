@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('post_pengumumen', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sekolah_id');
+            $table->foreignId('ppdb_id');
             $table->string('kategori');
             $table->string('title');
             $table->string('konten');
             $table->string('author');
             $table->timestamp('waktu_post');
+            $table->enum('publish',['yes','no'])->default('no');
             $table->timestamps();
         });
     }

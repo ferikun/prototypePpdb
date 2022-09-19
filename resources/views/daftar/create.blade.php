@@ -57,7 +57,7 @@
                                 <form action="/register" method="post">
                                     @csrf
 
-                                    <input type="hidden" name="role" value="siswa">
+                                    <input type="hidden" name="role" value="">
                                     <div>
                                         <i class="fa-solid fa-user-plus"></i>
                                     </div>

@@ -16,6 +16,13 @@ class Biodata extends Model
 
     protected $guarded = "id";
 
+    protected $fillable = [
+        "name",
+        "jurusan_id",
+        "ruangan_id",
+        "status_pembayaran"
+    ];
+
 
     public function scopeSearch($query)
     {
@@ -31,8 +38,8 @@ class Biodata extends Model
     }
 
 
-    public function asalsekolah(){
-        return $this->hasOne(AsalSekolah::class,'bio_id');
+    public function AsalSekolah(){
+        return $this->hasOne(AsalSekolah::class, 'bio_id')->withDefault(['nama_asal_sekolah' => 'Data Tidak Ada']);
     }
     public function iduser(){
         return $this->belongsTo(User::class,'user_id');
@@ -56,4 +63,10 @@ class Biodata extends Model
     {
         return $this->hasOne(NoPendaftaran::class,'bio_id');
     }
+
+    public function ppdb()
+    {
+        return $this->belongsTo(PPDB::class,'ppdb_id');
+    }
+
 }

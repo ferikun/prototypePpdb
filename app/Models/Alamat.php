@@ -16,4 +16,8 @@ class Alamat extends Model
     public function bio(){
         return $this->hasOne(Biodata::class);
     }
+
+    public function sekolah(){
+        return $this->belongsTo(Sekolah::class);
+    }
 }

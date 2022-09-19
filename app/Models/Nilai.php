@@ -9,5 +9,13 @@ class Nilai extends Model
 {
     use HasFactory;
 
-    protected $guarded = "id";
+    protected $fillable = [
+        "bio_id",
+        "nilai"
+    ];
+
+    public function bio()
+    {
+        return $this->belongsTo(Biodata::class,'bio_id');
+    }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('bio_id')->unique();
             $table->string('nama_asal_sekolah');
-            $table->string('sktb');
+            $table->string('sktb')->default('Belum ada');
             $table->foreignId('alamat_id');
             $table->timestamps();
         });

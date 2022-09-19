@@ -22,19 +22,21 @@ class LoginController extends Controller
             'username' => ['required'],
             'password' => ['required'],
         ]);
-    //    $bio =  Biodata::where('user_id', auth()->user()->id);
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
-            // if($bio->fill = false){
-            //     return redirect('/dashboard/create');
-            // }
             
             return redirect()->intended('/dashboard');
         }
- 
-    //    $warning = Alert::warning('Warning Title', 'Warning Message');
+
+        /*
+            Data request akan di validasi terlebih dahulu,
+            kemudian akan di lakukan auth
+            jika Data sesuai dengan yang di database
+            maka akan di alihkan ke '/dashboard',
+            tetapi jika tidak sama atau gagal, akan di arahkan
+            ke menu login lagi dengan membawa pesan Flash
+        */
         
 
         return back()->with('warning','Login Anda Gagal');

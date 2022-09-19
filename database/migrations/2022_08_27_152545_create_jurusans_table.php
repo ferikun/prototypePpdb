@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('jurusans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sekolah_id');
+            $table->foreignId('admin_id');
             $table->string('nama_jurusan');
+            $table->enum('showed',[true,false])->default(true);
             $table->timestamps();
         });
     }

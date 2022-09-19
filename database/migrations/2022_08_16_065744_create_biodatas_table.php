@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('biodatas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->unique()->nullable();
+            $table->foreignId('user_id')->unique();
             $table->string('name');
             $table->string('nickname');
             $table->string('nisn');
@@ -24,15 +24,13 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->string('agama');
             $table->string('anak_ke');
-            $table->foreignId('alamat_id');
-            $table->string('no_hp');
-            $table->string('status_keluarga');
-            $table->string('image')->nullable();
+            $table->string('status_keluarga')->default('Anak');
+            $table->string('no_hp')->default('Belum Punya Nomor HP');
+            $table->foreignId('ppdb_id');
             $table->foreignId('jurusan_id')->nullable();
             $table->foreignId('ruangan_id')->nullable();
-            $table->string('gel_daftar')->nullable();
-            $table->string('status_pembayaran')->nullable();
-            $table->string('status_kelulusan')->nullable();
+            $table->string('image')->nullable();
+            $table->enum('status_pembayaran',['0','1'])->default('0');
             $table->timestamps();
         });
     }

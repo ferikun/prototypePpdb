@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wali_ayahs', function (Blueprint $table) {
+        Schema::create('gelombangs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('bio_id');
-            $table->string('nama_ayah');
-            $table->date('tgl_lahir');
-            $table->string('pekerjaan');
-            $table->string('agama');
-            $table->string('no_hp');
-            $table->foreignId('alamat_id');
+            $table->string('gelombang');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wali_ayahs');
+        Schema::dropIfExists('gelombangs');
     }
 };

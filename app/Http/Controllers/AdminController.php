@@ -2,40 +2,119 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Biodata;
-use App\Models\Keuangan;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Models\Kontak;
+use App\Models\Admin;
+use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    public function InputNilai()
+
+
+    public function __construct()
     {
-        return view('dashboard.admin.inputnilai',[
-            "title" => "Input Nilai Siswa",
-            "siswas" => Biodata::with('iduser','asalsekolah')->get()
+        $this->middleware('auth');
+        $this->middleware('role:admin');
+    }
+
+    public function ProfilAdmin()
+    {
+        $db = Admin::where('admin_id',auth()->user()->id)->first();
+
+        $bioAdmin = [
+            "id" => $db->id,
+            "nama" => $db->name,
+            "username" => auth()->user()->username,
+            "email" => auth()->user()->email,
+            "telepon" => $db->telepon,
+            "image" => $db->image
+
+        ];
+        return view('admin.index',[
+            "data" => $bioAdmin
         ]);
     }
 
-    public function TidakLulus()
+    public function EditAdmin(Request $request)
     {
-        return view('dashboard.admin.tidaklulus',[
-            "title" => "Daftar Siswa Yang tidak lulu Ujian Masuk"
+        $validate = $request->validate([
+            "nama" => 'required|min:5',
+            "username" => 'required|min:5',
+            "email" => 'required|email:dns',
+            "telepon" => 'required|digits:12'
         ]);
+
+                Admin::where('admin_id',auth()->user()->id)->update([
+                    "name" => $validate['nama'],
+                    "telepon" => $validate['telepon'],
+                ]);
+                User::find(auth()->user()->id)->update([
+                    "username" => $validate['username'],
+                    "email" => $validate['email']
+                ]);
+                return redirect('/dashboard/admin')->with('edit','Data Berhasil di ubah');
+
     }
 
-    public function Keuangan()
+    public function EditFoto(Request $request, $id)
     {
-        return view('dashboard.admin.sekolah.keuangan',[
-            "title" => "Keuangan",
-            "dataKeuangan" => Keuangan::where('sekolah_id', auth()->user()->sekolah_id)->get()
+        $validate = $request->validate([
+            "image" => ['required','image','mimes:jpg,png,jpeg','file','max:1024']
         ]);
+
+        $validate['image'] = $request->file('image')->store('admin-profil');
+        $admin = Admin::find($id);
+
+        if($admin->image){
+
+            Storage::delete($admin->image);
+        }
+        // @dd($path);
+        // $img = File::delete($path);
+        $admin->update([
+            "name" => $admin->name,
+            "telepon" => $admin->telepon,
+            "image" => $validate['image']
+        ]);
+
+        return redirect('/dashboard/admin');
     }
 
-    public function Pengumuman()
+
+    public function ResetPassword(Request $request, $id)
     {
-        return view('dashboard.admin.sekolah.pengumuman');
+        $passLama = auth()->user()->password;
+        $valid = $request->validate([
+            "PasswordLama" => ['required'],
+            "PasswordBaru" => ['required','min:8'],
+            "KonfirmasiPassword" => ['required','min:8','same:'."PasswordBaru"]
+        ]);
+
+
+        // @dd($passLama,$valid['PasswordLama']);
+        $passhash = bcrypt($valid['PasswordBaru']);
+
+
+        if (Hash::check($valid['PasswordLama'], $passLama)) {
+            // The passwords match...
+            // @dd('Berhasil');
+            User::find($id)->update([
+                "password" => $passhash
+            ]);
+
+            return redirect('/dashboard/admin')->with('notifberhasil','Selamat Password Anda berhasil Di Ubah');
+        }
+        else
+        {
+            return redirect('/dashboard/admin')->with('notifgagal','Maaf Password Lama yang anda masukan salah');
+        }
+
+
+        
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +123,7 @@ class AdminController extends Controller
     public function index()
     {
         //
-        return view('dashoard.admin.index');
+        
     }
 
     /**

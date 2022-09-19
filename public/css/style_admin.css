@@ -1,5 +1,5 @@
 body {
-    background-color: #efefef;
+    background-color: #fafafa;
 }
 
 body::-webkit-scrollbar {
@@ -41,17 +41,38 @@ header h3 .menu-satu {
     margin-top: 20px;
 }
 
-#head_menu li a {
+#head_menu li .headMenu {
     text-decoration: none;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 20px;
 }
 
 #head_menu li a:hover {
     background-color: #2361ff;
     border-radius: 5px;
-    padding: 5px;
+}
+
+#head_menu li .dropdown-menu {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 40px 10px;
+    background-color: #202e50;
+    border-radius: 15px;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dropdown-item:hover {
+    color: #ffffff;
+}
+.dropdown-menu li button:hover {
+    background-color: #2361ff;
+    color: #ffffff;
 }
 
 
@@ -516,3 +537,90 @@ label #cancel {
     background-color: rgb(244, 152, 4);
     color: white;
 }
+
+.headPengumuman {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(222, 161, 48);
+    color: white;
+}
+
+
+/* profil admin */
+
+#btnSimpan {
+    background-color: #4E7FFF;
+    color: white;
+}
+
+
+/* data pertahun */
+
+.head_dataPertahun {
+    display: flex;
+    justify-content: space-between;
+    background-color: #076191;
+    color: white;
+}
+
+
+/*setting ppdb*/
+.headerppdb {
+    background-color: steelblue;
+    color: white;
+}
+
+/* lihat data siswa full */
+
+.headfull_dataSiswa {
+    display: flex;
+    justify-content: space-between;
+    background-color: #9e7f30;
+    color: white;
+}
+
+/* lihat data siswa full */
+
+.headfull_dataSiswa {
+    background-color: #9e7f30;
+    color: white;
+}
+
+.profile-pic-div {
+    height: 250px;
+    width: 250px;
+    transform: translate(0%, 0);
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo {
+    height: 100%;
+    width: 100%;
+}
+
+#file {
+    display: none;
+}
+
+#uploadBtn {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(56, 56, 56, 0.7);
+    color: rgb(255, 255, 255);
+    line-height: 260px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* responsive */
+
+@media (min-width: 600px) {}

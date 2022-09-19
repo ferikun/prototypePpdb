@@ -9,4 +9,8 @@ class Jurusan extends Model
 {
     use HasFactory;
     protected $guarded = "id";
+    protected $fillable = [
+        "admin_id",
+        "nama_jurusan"
+    ];
 }

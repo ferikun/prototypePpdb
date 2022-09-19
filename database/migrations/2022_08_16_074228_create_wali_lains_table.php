@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('agama');
             $table->string('pekerjaan');
             $table->foreignId('alamat_id');
-            $table->string('no_hp');
-            $table->string('statusKeluarga');
+            $table->string('no_hp')->default('Belum Punya Nomor HP');
+            $table->string('statusKeluarga')->default('Wali Murid');
             $table->timestamps();
         });
     }

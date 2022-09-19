@@ -9,4 +9,7 @@ class Ruangan extends Model
 {
     use HasFactory;
     protected $guarded = "id";
+    protected $fillable = [
+        "ppdb_id","nama_ruangan"
+    ];
 }

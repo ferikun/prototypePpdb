@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('keuangans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sekolah_id');
-            $table->string('pendaftaran');
-            $table->string('spp');
-            $table->string('lainnya')->nullable();
+            $table->foreignId('ppdb_id');
+            $table->string('nama_tagihan');
+            $table->string('nominal');
             $table->timestamps();
         });
     }
