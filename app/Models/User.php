@@ -22,7 +22,6 @@ class User extends Authenticatable
     protected $fillable = [
         'role',
         'username',
-        'name',
         'email',
         'password'
     ];
@@ -33,10 +32,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'sekolah_id',
-        'kodeMasuk',
-        'bio_id',
+        // 'password',
+        // 'sekolah_id',
+        // 'kodeMasuk',
+        // 'bio_id',
     ];
 
     /**
@@ -51,5 +50,10 @@ class User extends Authenticatable
 
     public function bio(){
         return $this->hasOne(Biodata::class);
+    }
+
+    public function sekolah()
+    {
+        return $this->belongsTo(Sekolah::class,'kode_sekolah','kode_sekolah');
     }
 }

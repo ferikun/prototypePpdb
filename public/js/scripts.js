@@ -1,26 +1,26 @@
-window.addEventListener('DOMContentLoaded', event => {
-
-    const sidebarToggle = document.body.querySelector('#menu');
+window.addEventListener("DOMContentLoaded", (event) => {
+    const sidebarToggle = document.body.querySelector("#menu");
     if (sidebarToggle) {
-
-        sidebarToggle.addEventListener('click', event => {
+        sidebarToggle.addEventListener("click", (event) => {
             event.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
-            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+            document.body.classList.toggle("sb-sidenav-toggled");
+            localStorage.setItem(
+                "sb|sidebar-toggle",
+                document.body.classList.contains("sb-sidenav-toggled")
+            );
         });
     }
-
 });
 
 // upload file
 function getImage(imagename) {
     var newimg = imagename.replace(/^.*\\/, "");
-    $('#display-image').html(newimg);
+    $("#display-image").html(newimg);
 }
 
 function getImage2(imagename) {
     var newimg = imagename.replace(/^.*\\/, "");
-    $('#display-image2').html(newimg);
+    $("#display-image2").html(newimg);
 }
 
 // admin
@@ -29,7 +29,7 @@ var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 
 for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function() {
+    dropdown[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var dropdownContent = this.nextElementSibling;
         if (dropdownContent.style.display === "block") {
@@ -38,4 +38,23 @@ for (i = 0; i < dropdown.length; i++) {
             dropdownContent.style.display = "block";
         }
     });
+}
+
+function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("konten").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("konten").style.marginLeft = "0";
+}
+
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }

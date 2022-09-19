@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('wali_lains', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('nama');
-            $table->string('tempat_lahir');
-            $table->string('tgl_lahir');
-            $table->string('agama');
-            $table->string('pekerjaan');
-            $table->string('statusKeluarga');
-            $table->foreignId('alamat_id');
+            $table->foreignId('biodata_id');
+            $table->string('role')->nullable();
+            $table->string('nik')->nullable();
+            $table->string('name')->nullable();
+            $table->string('birthplace')->nullable();
+            $table->date('birthday')->nullable();
+            $table->string('religion')->nullable();
+            $table->string('profession')->nullable();
+            $table->string('phone')->nullable();;
             $table->timestamps();
         });
     }

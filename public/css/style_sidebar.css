@@ -1,0 +1,313 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrap {
+    display: flex;
+}
+
+/* Style Header */
+
+header {
+    background-color: #4e7fff;
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height: 70px;
+    top: 0;
+}
+
+header .header-title h3 {
+    color: white;
+    text-align: center;
+    margin-top: 24px;
+}
+
+header h3 .menu-satu {
+    margin-left: 10px;
+}
+
+/* style menu edit profil */
+
+.edit-profil .profil a {
+    text-decoration: none;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+}
+
+.edit-profil .profil a:hover {
+    background-color: #4e7fff;
+    color: #ffffff;
+}
+
+/* Style Sidebar */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    left: -270px;
+    width: 270px;
+    height: 100%;
+    transition: all 0.5s ease;
+    z-index: 3;
+    top: 0;
+}
+
+.menu {
+    margin-top: 70px;
+}
+
+.sidebar .header {
+    text-align: center;
+    position: fixed;
+    background-color: #4e7fff;
+    padding: 0 60px;
+}
+
+.sidebar {
+    font-size: 22px;
+    color: white;
+    text-align: left;
+    line-height: 70px;
+    background: #4e7fff;
+    user-select: none;
+    overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    padding-left: 10px;
+    box-sizing: border-box;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+#check {
+    display: none;
+}
+
+label #btn {
+    position: fixed;
+    cursor: pointer;
+    background: #4e7fff;
+    border-radius: 3px;
+}
+
+label #cancel {
+    position: fixed;
+    cursor: pointer;
+    background: #4e7fff;
+    border-radius: 3px;
+}
+
+label #btn {
+    z-index: 4;
+    left: 0;
+    top: 5px;
+    font-size: 30px;
+    color: white;
+    padding: 6px 12px;
+    transition: all 0.5s;
+}
+
+label #cancel {
+    z-index: 4;
+    left: -195px;
+    top: 17px;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 4px 9px;
+    transition: all 0.5s ease;
+}
+
+#check:checked ~ .sidebar {
+    left: 0px;
+}
+
+#check:checked ~ label #btn {
+    left: 270px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+    left: 200px;
+}
+
+#check:checked ~ body {
+    margin-left: 270px;
+}
+
+.sidebar ul ul {
+    position: static;
+    display: none;
+}
+
+.sidebar ul ul li {
+    position: static;
+}
+
+.sidebar ul li ul li a {
+    font-size: 14px;
+}
+
+.sidebar ul li a span {
+    z-index: 5;
+}
+
+.sidebar ul li a:hover span {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.sidebar ul .show-satu.show {
+    display: block;
+}
+
+.sidebar ul .show-dua.show {
+    display: block;
+}
+
+.sidebar ul .show-tiga.show {
+    display: block;
+}
+
+.sidebar ul li a span.rotate {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+#konten {
+    margin-top: 80px;
+    transition: margin-left 0.5s;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.head_dataDiri {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(31, 22, 189);
+    color: #ffffff;
+}
+
+.head_minatBakat {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(31, 22, 189);
+    color: #ffffff;
+}
+
+#editBtn {
+    color: #ffffff;
+}
+
+#editBtn:hover {
+    color: #000;
+    background-color: rgb(255, 255, 255);
+}
+
+#editBtn2 {
+    color: #ffffff;
+}
+
+#editBtn2:hover {
+    background-color: #000;
+}
+
+.modal-header {
+    text-align: center;
+    background-color: #242097;
+    color: #ffffff;
+}
+
+.head_ubahdatadiri {
+    background-color: #4e7fff;
+    color: #ffffff;
+}
+
+/* upload doc */
+
+input[type="file"] {
+    display: none;
+}
+
+.upload label {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.upload p {
+    font-size: 12px;
+}
+
+/* bayaran */
+
+.bayar {
+    background-color: #a22ba2;
+    color: #ffffff;
+}
+
+.bayar_daftar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pembayaran_lainya {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.btn-bayar {
+    background-color: #12a24b;
+    color: #ffffff;
+}
+
+.btn-bayar:hover {
+    background-color: #0c6530;
+    color: #ffffff;
+}
+
+/* edit email pw */
+
+.head_emailpw {
+    display: flex;
+    justify-content: space-between;
+    background-color: #9f2a53;
+    color: #ffffff;
+}
+
+.head_dataOrangTua,
+.head_dataWali {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1aa149;
+    color: #ffffff;
+}
+
+.head_editsekolah {
+    display: flex;
+    justify-content: space-between;
+    background-color: #a22ba2;
+    color: #ffffff;
+}

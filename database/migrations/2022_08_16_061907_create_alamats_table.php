@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('alamats', function (Blueprint $table) {
             $table->id();
-            $table->text('alamat');
-            $table->foreignId('kec_id');
-            $table->foreignId('kab_id');
-            $table->foreignId('prov_id');            
+            $table->foreignId('reference_id')->nullable();
+            $table->string('for')->nullable();
+            $table->text('alamat')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kabupaten')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kodepos')->nullable();
             $table->timestamps();
         });
     }

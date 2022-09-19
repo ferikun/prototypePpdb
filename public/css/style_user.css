@@ -2,11 +2,14 @@ body {
     background-color: #efefef;
 }
 
+#konten {
+    font-size: 14px;
+}
 
 /* Style Header */
 
 header {
-    background-color: #4E7FFF;
+    background-color: #4e7fff;
     display: block;
     position: fixed;
     width: 100%;
@@ -25,20 +28,18 @@ header h3 .menu-satu {
     margin-left: 10px;
 }
 
-
 /* style menu edit profil */
 
 .edit-profil .profil a {
     text-decoration: none;
     color: #000;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .edit-profil .profil a:hover {
-    background-color: #4E7FFF;
+    background-color: #4e7fff;
     color: #ffffff;
 }
-
 
 /* Style Sidebar */
 
@@ -54,7 +55,7 @@ header h3 .menu-satu {
     left: -250px;
     width: 250px;
     height: 100%;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     z-index: 3;
     top: 0;
 }
@@ -68,7 +69,7 @@ header h3 .menu-satu {
     color: white;
     text-align: left;
     line-height: 70px;
-    background: #4E7FFF;
+    background: #4e7fff;
     user-select: none;
 }
 
@@ -78,17 +79,17 @@ header h3 .menu-satu {
     width: 100%;
     line-height: 50px;
     font-size: 14px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: white;
     padding-left: 10px;
     box-sizing: border-box;
-    transition: .4s;
+    transition: 0.4s;
     text-decoration: none;
 }
 
-ul li:hover a {
+/* ul li:hover a {
     padding-left: 50px;
-}
+} */
 
 .sidebar ul a i {
     margin-right: 16px;
@@ -102,7 +103,7 @@ label #btn,
 label #cancel {
     position: fixed;
     cursor: pointer;
-    background: #4E7FFF;
+    background: #4e7fff;
     border-radius: 3px;
 }
 
@@ -113,7 +114,7 @@ label #btn {
     font-size: 30px;
     color: white;
     padding: 6px 12px;
-    transition: all .5s;
+    transition: all 0.5s;
 }
 
 label #cancel {
@@ -123,27 +124,26 @@ label #cancel {
     font-size: 30px;
     color: #ffffff;
     padding: 4px 9px;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
 }
 
-#check:checked~.sidebar {
+#check:checked ~ .sidebar {
     left: 0px;
 }
 
-#check:checked~label #btn {
+#check:checked ~ label #btn {
     left: 250px;
     opacity: 0;
     pointer-events: none;
 }
 
-#check:checked~label #cancel {
+#check:checked ~ label #cancel {
     left: 210px;
 }
 
-#check:checked~body {
+#check:checked ~ body {
     margin-left: 250px;
 }
-
 
 /* Style Konten */
 
@@ -166,13 +166,11 @@ label #cancel {
     color: #000;
 }
 
-
 /* .edit-profil ul li a:hover {
     background-color: #4E7FFF;
     border-radius: 2px;
     color: white;
 } */
-
 
 /* .edit-profil ul li a:active {
     background-color: #0dcaf0;
@@ -180,17 +178,17 @@ label #cancel {
 } */
 
 .edit-epw button {
-    background-color: #4E7FFF;
+    background-color: #4e7fff;
     color: white;
 }
 
 .edit-epw button:hover {
-    background-color: #3A2C88;
+    background-color: #3a2c88;
     color: white;
 }
 
 #konten {
-    transition: margin-left .5s;
+    transition: margin-left 0.5s;
     padding: 10px;
     width: 100%;
 }
@@ -198,7 +196,6 @@ label #cancel {
 body {
     overflow-x: hidden;
 }
-
 
 /* pembayaran */
 
@@ -224,7 +221,6 @@ input[type="file"] {
 .upload p {
     font-size: 12px;
 }
-
 
 /* pengumuman */
 

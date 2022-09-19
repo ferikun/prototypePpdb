@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 return new class extends Migration
 {
@@ -15,23 +16,20 @@ return new class extends Migration
     {
         Schema::create('biodatas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->unique()->nullable();
-            $table->integer('nisn');
-            $table->enum('gender',['laki-laki','perempuan']);
-            $table->string('placeBorn');
-            $table->string('birth');
-            $table->string('agama');
-            $table->string('statusAnak');
-            $table->string('statusKeluarga');
-            $table->string('bidangFav');
-            $table->string('olahraga');
-            $table->string('cita');
-            $table->foreignId('alamat_id');
-            $table->foreignId('asalSekolah_id'); 
-            $table->string('ruangan')->nullable();
-            $table->string('status')->nullable();;
-            $table->integer('noPeserta')->nullable();;
-            $table->string('gelDaftar')->nullable();;
+            $table->foreignId('user_id')->nullable();
+            $table->string('nisn');
+            $table->string('name');
+            $table->string('nickname');
+            $table->enum('gender',['Laki-laki','Perempuan']);
+            $table->string('birthplace');
+            $table->string('birthday');
+            $table->string('religion');
+            $table->string('anak_ke');
+            $table->string('status_keluarga');
+            $table->string('jurusan');
+            $table->foreignId('ruangan_id')->nullable();
+            $table->integer('ppdb_id')->nullable();
+            $table->string('status_pembayaran')->nullable();
             $table->timestamps();
         });
     }

@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('asal_sekolahs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('biodata_id')->nullable();
-            $table->string('nama');
-            $table->foreignId('alamat_id');
+            $table->string('name');
             $table->string('sktb');
             $table->timestamps();
         });

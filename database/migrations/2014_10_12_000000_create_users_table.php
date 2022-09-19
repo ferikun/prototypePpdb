@@ -15,13 +15,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->enum('role',['siswa','wali','admin']);
+            $table->enum('role',['siswa','admin']);
             $table->string('username');
-            $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->foreignId('sekolah_id')->nullable();
-            $table->integer('kodeMasuk')->nullable();
             $table->timestamps();
         });
     }

@@ -1,6 +1,7 @@
 @extends('dashboard.layouts.main')
 @section('container')
-                <div class="col-10">
+                <!-- menu Pengumuman -->
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header bg-info text-white">
                             <h4><i class="bi bi-megaphone-fill me-3"></i>Pengumuman</h4>
@@ -19,7 +20,7 @@
                                 <tbody>
                                     <tr>
                                         <td>01112313</td>
-                                        <td>{{ auth()->user()->name }}</td>
+                                        <td>Muhammad Toni</td>
                                         <td>89792347</td>
                                         <td>MIPA</td>
                                         <td style="background-color: yellow;">Lolos</td>
@@ -32,5 +33,5 @@
                         </div>
                     </div>
                 </div>
-                <!-- ahir menu Upload Dokumen -->
+                <!-- ahir menu Pengumuman -->
 @endsection

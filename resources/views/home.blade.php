@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('containers')
-    <h1>Halaman Home</h1>
-    <a href="/admin/daftarsiswa">daftar calon siswa</a>
-    <a href="/user/biosiswa/1">siswa 1</a>
+    <h1 class="text-center">Halaman Home</h1>
+    <div class="container">
+    <a href="/login" class="btn btn-primary d-block">Login Ngab</a>
+    </div>
 @endsection

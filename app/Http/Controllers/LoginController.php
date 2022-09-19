@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Biodata;
+use GuzzleHttp\Promise\Create;
 
 class LoginController extends Controller
 {
@@ -22,7 +24,6 @@ class LoginController extends Controller
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
             return redirect()->intended('/dashboard');
         }
  

@@ -71,7 +71,7 @@
                                         <i class="bi bi-person-circle"></i>
                                     </div>
                                     <div class="form-outline form-white mb-4 mt-2 inputUsername">
-                                        <input type="username" name="username" id="username" class="form-control form-control-lg" autocomplete="off" value="{{ old('username') }}" placeholder="Username" />
+                                        <input type="username" name="username" id="username" class="form-control form-control-lg" autocomplete="off" value="{{ old('username') }}" placeholder="Username" autofocus />
                                         <!-- <i class="fa-solid fa-user"></i> -->
                                     </div>
 

@@ -55,23 +55,13 @@
                         <div class="card-body px-5 p-5 text-center">
 
                             <div class="mb-md-5 mt-md-2 pb-2">
-                                <form action="/register" method="post">
+                                <form action="/register/create" method="post">
                                     @csrf
-
                                     <input type="hidden" name="role" value="siswa">
                                     <div>
                                         <i class="fa-solid fa-user-plus"></i>
                                     </div>
 
-                                    <div class="form-outline form-white mb-3 mt-2">
-                                        <input type="text" name="name" id="name" class="form-control form-control-lg @error('name') is-invalid @enderror" autocomplete="off" placeholder="Nama Lengkap" value="{{ old('name') }}" required>
-                                        @error('name')
-                                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                            {{ $message }}
-                                          </div>
-                                        @enderror
-
-                                    </div>
 
                                     <div class="form-outline form-white mb-3 mt-2">
                                         <input type="text" name="username" id="username" class="form-control form-control-lg @error('username') is-invalid @enderror" autocomplete="off" placeholder="Username" value="{{ old('username') }}" required>
@@ -80,7 +70,6 @@
                                             {{ $message }}
                                           </div>
                                         @enderror
-
                                     </div>
 
                                     <div class="form-outline form-white mb-3">
@@ -100,7 +89,7 @@
                                           </div>
                                         @enderror
                                     </div>
-
+                                    
                                     <hr>
                                     <div class="d-grid gap-2 col-12 mx-auto mt-5">
                                         <button class="btn btn-primary btn-lg masuk" type="submit">Daftar</button>

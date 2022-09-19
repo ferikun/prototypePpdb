@@ -7,18 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alamat extends Model
 {
-    use HasFactory;
+    protected $fillable =  [
+        'reference_id',
+        'for',
+        'alamat',
+        'kecamatan',
+        'kabupaten',
+        'provinsi',
+        'kodepos'
+    ];
 
     public function bio(){
-        return $this->hasOne(Biodata::class);
+        return $this->belongsTo(Biodata::class,'biodata_id','reference_id');
     }
-    public function kecamatan(){
-        return $this->belongsTo(Kecamatan::class,'kecamatan_id');
+    public function orangtua(){
+        return $this->belongsTo(DataOrangTua::class,'data_orang_tua_id','reference_id');
     }
-    public function kabupaten(){
-        return $this->belongsTo(Kabupaten::class,'kabupaten_id');
-    }
-    public function provinsi(){
-        return $this->belongsTo(Provinsi::class,'provinsi_id');
+    public function asalsekolah(){
+        return $this->belongsTo(AsalSekolah::class,'asal_sekolah_id','reference_id');
     }
 }
