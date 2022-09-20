@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 @section('container')
     @if (session()->has('updoc'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -116,4 +116,7 @@
                     </div>
                 </div>
                 <!-- ahir menu Upload Dokumen -->
+@endsection
+@section('javascript')
+    <script src="/js/Dokumen.js"></script>
 @endsection

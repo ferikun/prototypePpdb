@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 @section('container')
                 <!-- menu Pengumuman -->
                 <div class="col-md-12">

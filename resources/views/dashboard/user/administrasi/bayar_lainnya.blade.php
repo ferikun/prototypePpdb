@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 @section('container')
                 <!-- biaya lainya -->
                 <div class="col-10">

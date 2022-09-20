@@ -78,25 +78,30 @@ class OrangtuaWaliController extends Controller
 
     public function profilwali()
     {
+        $bio_id = auth()->user()->bio->id;
         try{
-        $ayah = DataOrangTua::where('biodata_id',auth()->user()->bio->id)
-                            ->where('role','ayah')
-                            ->firstOrFail();
-        $ibu = DataOrangTua::where('biodata_id',auth()->user()->bio->id)
-                            ->where('role','ibu')
-                            ->firstOrFail();
-        $wali = WaliLain::where('biodata_id',auth()->user()->bio->id)
-                        ->first();
-        $alamatAyah = Alamat::where([['reference_id',auth()->user()->bio->id],['for','ayah']])                    
-                            ->first();
-        $alamatIbu = Alamat::where([['reference_id',auth()->user()->bio->id],['for','ibu']])                    
-                            ->first();                     
-        $alamatWali = Alamat::where([['reference_id',auth()->user()->bio->id],['for','wali']])
-                            ->first();
+        $ayah = DataOrangTua::where([
+        'biodata_id' => $bio_id,
+        'role'=>'ayah'
+        ])->firstOrFail();
+        
+        $ibu = DataOrangTua::where([
+            'biodata_id' => $bio_id,
+            'role' => 'ibu'
+            ])->firstOrFail();
+
+        $wali = WaliLain::where('biodata_id', $bio_id)->first();
+
+        $alamatAyah = Alamat::where([['reference_id', $bio_id],['for','ayah']])->first();
+
+        $alamatIbu = Alamat::where([['reference_id', $bio_id],['for','ibu']])->first();
+
+        $alamatWali = Alamat::where([['reference_id', $bio_id],['for','wali']])->first();
         } catch( ModelNotFoundException $exception){
             return view('dashboard.createortu');
         }
-        return view('dashboard.profil_orang_tua',[
+
+        return view('dashboard.user.profile.profil_orang_tua',[
             "title" => 'Profil Orang Tua',
             "ayah" => $ayah,
             "ibu"  => $ibu,
@@ -107,6 +112,7 @@ class OrangtuaWaliController extends Controller
         ]);
     }
 
+    
     public function updateortu(Request $request)
     {
         $ayah = [

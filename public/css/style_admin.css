@@ -1,0 +1,579 @@
+body {
+    background-color: #fafafa;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Style Header */
+
+header {
+    background-color: #4E7FFF;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height: 70px;
+    top: 0;
+}
+
+header .header-title h3 {
+    color: white;
+    text-align: center;
+    margin-top: 24px;
+}
+
+header h3 .menu-satu {
+    margin-left: 10px;
+}
+
+.header-titled {
+    position: absolute;
+    margin: 20px 530px;
+    color: white;
+    text-align: justify;
+}
+
+#nav_admin {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+#head_menu li .headMenu {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#head_menu li a:hover {
+    background-color: #2361ff;
+    border-radius: 5px;
+}
+
+#head_menu li .dropdown-menu {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 40px 10px;
+    background-color: #202e50;
+    border-radius: 15px;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dropdown-item:hover {
+    color: #ffffff;
+}
+
+#head_menu li button:hover{
+    background-color: #2361ff;
+    border-radius: 5px;
+}
+
+/* style menu edit profil */
+
+.edit-profil .profil a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.edit-profil .profil a:hover {
+    background-color: #4E7FFF;
+    color: #ffffff;
+}
+
+
+/* Style Sidebar */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar {
+    display: flex;
+    position: fixed;
+    left: -270px;
+    width: 270px;
+    height: 100%;
+    transition: all .5s ease;
+    z-index: 3;
+    top: 0;
+}
+
+.menu {
+    margin-top: 70px;
+}
+
+.sidebar .header {
+    text-align: center;
+    position: fixed;
+    background-color: #1741aa;
+    padding: 0 60px;
+}
+
+.sidebar {
+    font-size: 22px;
+    color: white;
+    text-align: left;
+    line-height: 70px;
+    background: #373737;
+    user-select: none;
+    overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding-left: 10px;
+    box-sizing: border-box;
+    transition: .4s;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.sideMenu:hover,
+.subMenu:hover {
+    background-color: #545353;
+    border-radius: 10px;
+}
+
+.sidebar ul a i {
+    margin-right: 16px;
+}
+
+#check {
+    display: none;
+}
+
+label #btn {
+    position: fixed;
+    cursor: pointer;
+    background: #4E7FFF;
+    border-radius: 3px;
+}
+
+label #cancel {
+    position: fixed;
+    cursor: pointer;
+    background: #1741aa;
+    border-radius: 3px;
+}
+
+label #btn {
+    z-index: 4;
+    left: 0;
+    top: 5px;
+    font-size: 30px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel {
+    z-index: 4;
+    left: -195px;
+    top: 17px;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked~.sidebar {
+    left: 0px;
+}
+
+#check:checked~label #btn {
+    left: 270px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked~label #cancel {
+    left: 200px;
+}
+
+#check:checked~body {
+    margin-left: 270px;
+}
+
+.sidebar ul ul {
+    position: static;
+    display: none;
+}
+
+.sidebar ul ul li {
+    position: static;
+}
+
+.sidebar ul li ul li a {
+    font-size: 14px;
+}
+
+.sidebar ul li a span {
+    z-index: 5;
+}
+
+.sidebar ul li a:hover span {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.sidebar ul .show-satu.show {
+    display: block;
+}
+
+.sidebar ul .show-dua.show {
+    display: block;
+}
+
+.sidebar ul .show-tiga.show {
+    display: block;
+}
+
+.sidebar ul li a span.rotate {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+
+/* konten */
+
+#konten {
+    transition: margin-left .5s;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    margin-top: 80px;
+    margin-right: 20px;
+}
+
+
+/* calon siswa */
+
+.head-calonSiswa {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.table .calon-head {
+    background-color: #076191;
+    color: #ffffff;
+}
+
+.tabel-calon {
+    overflow: auto;
+    height: 380px;
+}
+
+.calon-body tr:hover {
+    background-color: rgb(140, 80, 160);
+    color: white;
+}
+
+.tabel-calon .calon-head {
+    position: sticky;
+    top: -13px;
+}
+
+.inputCari {
+    width: 300px;
+    height: 30px;
+}
+
+.cetak {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* input nilai */
+
+.tabel-inputNilai {
+    overflow: auto;
+    height: 430px;
+}
+
+.input-head {
+    background-color: #11bc80;
+    color: white;
+}
+
+.tabel-inputNilai .input-head {
+    position: sticky;
+    top: -13px;
+}
+
+.head-inputNilai {
+    background-color: #bc117d;
+    color: #ffffff;
+}
+
+.form-inputNilai {
+    font-size: 12;
+}
+
+#inputPencarian {
+    width: 260px;
+    height: 50px;
+}
+
+.table-inputNilai .calon-head {
+    background-color: #076191;
+    color: #ffffff;
+}
+
+.body-input tr {
+    height: 50px;
+}
+
+
+/* settings keuangan */
+
+.set-keuangan .card-header {
+    background-color: #0b4983;
+    color: #ffffff;
+}
+
+.set-headKeuangan {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.set-headKeuangan i {
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.body-setKeuangan p button i {
+    color: #ffffff;
+}
+
+.footer-setKeuangan {
+    display: flex;
+    justify-content: right;
+    background-color: #ffffff;
+}
+
+.footer-setKeuangan button {
+    background-color: #11bc80;
+    color: #ffffff;
+}
+
+.footer-setKeuangan button:hover {
+    background-color: #1a513e;
+    color: #ffffff;
+}
+
+
+/* info Sekolah */
+
+.head_infoSekolah {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1741aa;
+    color: #ffffff;
+}
+
+#btnEdit,
+#btnEdit2,
+#btnUpload {
+    color: #ffffff;
+}
+
+#btnEdit:hover,
+#btnEdit2:hover,
+#btnUpload:hover {
+    background-color: #000;
+    color: #ffffff;
+}
+
+#card_upload {
+    margin-top: 10px;
+}
+
+.head_logo {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1741aa;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+#hapus_logo {
+    background-color: rgb(196, 13, 13);
+    color: rgb(255, 255, 255);
+}
+
+#hapus_logo:hover {
+    background-color: rgb(240, 24, 24);
+}
+
+
+/* modal */
+
+.modal-header {
+    background-color: midnightblue;
+    color: white;
+}
+
+
+/* tambah jurusan */
+
+.head_jurusan {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1741aa;
+    color: white;
+}
+
+.tambah_jurusan {
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+.tambah_jurusan:hover {
+    background-color: rgb(206, 206, 206);
+    color: #2361ff;
+}
+
+.tabel-jurusan {
+    overflow: auto;
+    height: 410px;
+}
+
+.tabel-jurusan .jurusan-head {
+    position: sticky;
+    top: -13px;
+}
+
+.tabel-jurusan::-webkit-scrollbar {
+    display: none;
+}
+
+.table-tambahJurusan {
+    /* width: 1060px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif; */
+    transition: all .5s ease;
+}
+
+.table-tambahJurusan .jurusan-head {
+    background-color: #076191;
+    color: #ffffff;
+    height: 40px;
+    font-size: 16px;
+}
+
+.tabel-input {
+    overflow: auto;
+    height: 380px;
+}
+
+.body-jurusan tr {
+    height: 40px;
+}
+
+.hapusJurusan {
+    background-color: #cd2a2a;
+    color: white;
+}
+
+.hapusJurusan:hover {
+    background-color: #902121;
+    color: white;
+}
+
+.footer_tambahJurusan {
+    background-color: #1741aa;
+}
+
+
+/* Riwayat Pendaftaran */
+
+.headerRiwayat {
+    background-color: #1d2c55;
+    color: white;
+}
+
+.tabel-riwayat {
+    overflow: auto;
+    height: 410px;
+}
+
+.riwayat-head {
+    background-color: #076191;
+    color: white;
+    height: 30px;
+}
+
+.tabel-riwayat .riwayat-head {
+    position: sticky;
+    top: -13px;
+}
+
+#headConfirm {
+    background-color: rgb(244, 152, 4);
+    color: white;
+}
+
+.headPengumuman {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(222, 161, 48);
+    color: white;
+}
+
+
+/* profil admin */
+
+#btnSimpan {
+    background-color: #4E7FFF;
+    color: white;
+}
+
+
+/* data pertahun */
+
+.head_dataPertahun {
+    display: flex;
+    justify-content: space-between;
+    background-color: #076191;
+    color: white;
+}
+
+
+/* lihat data siswa full */
+
+.headfull_dataSiswa {
+    display: flex;
+    justify-content: space-between;
+    background-color: #9e7f30;
+    color: white;
+}
+
+
+/* responsive */
+
+@media (min-width: 600px) {}

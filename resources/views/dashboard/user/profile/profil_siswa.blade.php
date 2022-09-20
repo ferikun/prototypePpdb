@@ -1,5 +1,5 @@
 
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 @section('container')
 @if (session()->has('berhasil')) 
              <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -366,6 +366,7 @@
                                 <div class="form-group mt-2">
                                     <label for="bidang_favorit">Bidang Yang Paling Digemari</label>
                                     <select name="bidang_favorit" id="bidang_favorit" class="form-control">
+                                        <option selected value="">Pilih Bidang</option>
                                         <option value="Sains">Sains</option>
                                         <option value="Musik">Musik</option>
                                         <option value="Sejarah">Sejarah</option>
@@ -378,6 +379,7 @@
                                 <div class="form-group mt-2">
                                     <label for="olahraga">Olahraga Yang Paling Digemari</label>
                                     <select name="olahraga" id="olahraga" class="form-control">
+                                        <option selected value="">Pilih Bidang</option>
                                         <option value="Sepak Bola">Sepak Bola</option>
                                         <option value="Futsal">Futsal</option>
                                         <option value="Bola Voli">Bola Voli</option>
@@ -407,5 +409,8 @@
 
             <!-- modal edit data diri -->
             
+@endsection
+@section('javascript')
+    <script src="/js/ProfileScript.js"></script>
 @endsection
     

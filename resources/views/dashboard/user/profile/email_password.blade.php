@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 @section('container')
 @if (session()->has('berhasilemail')) 
 <div class="alert alert-success alert-dismissible fade show fs-5 col-8" role="alert">

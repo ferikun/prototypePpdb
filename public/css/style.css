@@ -1,14 +1,14 @@
 .card {
-    background-color: #fcfbfb;
+    background-color: #FCFBFB;
 }
 
 .bi-person-circle {
     font-size: 70px;
-    color: #52708b;
+    color: #52708B;
 }
 
 .masuk {
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 18px;
     font-weight: bold;
 }
@@ -23,7 +23,7 @@
 
 .fa-user {
     font-size: 20px;
-    color: #52708b;
+    color: #52708B;
 }
 
 .inputUsername {
@@ -50,7 +50,7 @@
 
 .eye {
     font-size: 20px;
-    color: #52708b;
+    color: #52708B;
 }
 
 .show {
@@ -63,20 +63,23 @@ li:hover {
     color: #ffffff;
 }
 
+
 /* registrasi */
 
 .fa-user-plus {
     font-size: 70px;
-    color: #52708b;
+    color: #52708B;
     margin-bottom: 30px;
 }
+
 
 /* form pendaftaran */
 
 .card-body {
     font-size: 15px;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
 
 /* .jk {
     position: relative;
@@ -111,52 +114,4 @@ li:hover {
 #headFormulir {
     background-color: #0d6efd;
     color: #ffffff;
-}
-
-.head-form {
-    font-size: 15px;
-    font-family: "Roboto Slab", serif;
-}
-
-.head-form select {
-    text-decoration: none;
-}
-
-.bodyForm {
-    display: flex;
-    justify-content: center;
-}
-
-#jurusan {
-    background-color: #500000;
-    color: white;
-    border-radius: 5px;
-}
-
-/* #dataSekolah {
-    display: none;
-}
-
-.tampil {
-    display: flex;
-} */
-
-.inputPw {
-    position: relative;
-}
-
-.inputPw i {
-    position: absolute;
-    right: -5px;
-    top: 1px;
-    padding: 0 9px;
-}
-
-.eye {
-    font-size: 20px;
-    color: #52708b;
-}
-
-.show {
-    display: none;
 }

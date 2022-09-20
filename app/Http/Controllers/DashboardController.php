@@ -22,25 +22,33 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('dashboard.index');
+        $role = auth()->user()->role;
+        if( $role == 'siswa')
+        {
+            return view('dashboard.user.index');
+        }
+        elseif( $role == 'admin')
+        {
+            return view('dashboard.admin.index');
+        }
     }
     public function pengumuman()
     {
-        return view('dashboard.pengumuman');
+        return view('dashboard.user.pengumuman.pengumuman');
     }
 
     public function bayar_pendaftaran()
     {
-        return view('dashboard.bayar_pendaftaran');
+        return view('dashboard.user.administrasi.bayar_pendaftaran');
     }
     public function bayar_lainnya()
     {
-        return view('dashboard.bayar_lainnya');
+        return view('dashboard.user.administrasi.bayar_lainnya');
     }
 
     public function dokumen()
     {
-        return view('dashboard.dokumen',[
+        return view('dashboard.user.administrasi.dokumen',[
             'title' => 'Dokumen',
             'doc' => Dokumen::where('biodata_id',auth()->user()->bio->id)->first()
         ]);
@@ -101,18 +109,18 @@ class DashboardController extends Controller
     public function email_password()
     {
         $user = User::where('id',auth()->user()->id)->first();
-        return view('dashboard.email_password',[
+        return view('dashboard.user.profile.email_password',[
             'title' => 'Email & Password',
             'user' => $user
         ]);
     }
 
     public function formasek(){
-        return view('dashboard.createasek');
+        return view('dashboard.user.create.createasek');
     }
 
     public function formortu(){
-        return view('dashboard.createortu');
+        return view('dashboard.user.create.createortu');
     }
 
     
@@ -123,6 +131,7 @@ class DashboardController extends Controller
             'current_password' => 'required',
             'password' => ['required', 'min:8', 'confirmed']
         ]);
+
         if(Hash::check($request->current_password, auth()->user()->password)){
             User::where('id',auth()->user()->id)
             ->update(['password' => Hash::make($request->password)]);

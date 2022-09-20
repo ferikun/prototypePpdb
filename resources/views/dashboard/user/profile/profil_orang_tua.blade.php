@@ -1,5 +1,5 @@
 
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 @section('container')
 @if (session()->has('berhasil')) 
              <div class="alert alert-success alert-dismissible fade show fs-5 col-12" role="alert">
@@ -454,4 +454,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('javascript')
+    <script src="/js/WaliScript.js"></script>
 @endsection

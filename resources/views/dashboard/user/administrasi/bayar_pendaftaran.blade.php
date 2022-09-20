@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 @section('container')
                 <!-- pembayaran pendaftaran -->
                 <div class="col-10">

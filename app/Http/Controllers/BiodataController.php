@@ -11,7 +11,7 @@ use App\Models\MinatBakat;
 class BiodataController extends Controller
 {
     public function formbio(){
-        return view('dashboard.createbio');
+        return view('dashboard.user.create.createbio');
     }
 
     
@@ -32,6 +32,7 @@ class BiodataController extends Controller
                     'jurusan' => 'required',
                     'ppdb_id' => 'required'    
                 ]);
+
         $user->bio()->create($validatedDataBio);
         $validatedDataBio['user_id'] = auth()->user()->id;
         $validatedAlamat = $request->validate([
@@ -69,7 +70,7 @@ class BiodataController extends Controller
         $address = Alamat::where('reference_id',auth()->user()->bio->id)
                          ->where('for','biodata')
                          ->first();
-        return view('dashboard.profil_siswa',[
+        return view('dashboard.user.profile.profil_siswa',[
             "title" => "bio", 
             "biodata" => Biodata::where('id',auth()->user()->bio->id)->first(),
             "address" => $address,

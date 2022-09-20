@@ -93,7 +93,7 @@ class DashboardAsalSekolahController extends Controller
             return view('dashboard.createasek');
         }
         
-        return view('dashboard.profil_asal_sekolah',[
+        return view('dashboard.user.profile.profil_asal_sekolah',[
             "title" => 'Asal Sekolah',
             "asek" => $asek,
             "address" => $address
